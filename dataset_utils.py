@@ -26,8 +26,46 @@ def crop_and_pad(img, size=224.0):
     return cv2.copyMakeBorder(resized, int(pad_h), int(size - new_h - pad_h),
                               int(pad_w), int(size - new_w - pad_w), cv2.BORDER_CONSTANT, value=[0, 0, 0])
 
+# def save_data(root_path, dataset_dir, dataset_exp_name, images_folder_name, datasets, C, C_dash, train_val_split, resolution):
+#     data_dir = os.path.join(root_path, dataset_dir, dataset_exp_name, images_folder_name)
+#     os.makedirs(data_dir, exist_ok=True)
+#     os.makedirs(os.path.join(data_dir, 'train'), exist_ok=True)
+#     os.makedirs(os.path.join(data_dir, 'val'), exist_ok=True)
+
+#     categories = list(C) + list(C_dash)
+#     train_iteration_no, val_iteration_no = 0, 0
+
+#     for cat_it, category in tqdm(enumerate(categories), total=len(categories)):
+#         for dataset_name in datasets:
+#             # Corrected glob path
+#             imgs_path = np.array(glob.glob(os.path.join(root_path, dataset_dir, dataset_name, category, '*.*')))
+#             print(f"Searching in: {os.path.join(root_path, dataset_dir, dataset_name, category)}")
+#             print(f"Found {len(imgs_path)} images for category '{category}' in dataset '{dataset_name}'")
+
+#             if len(imgs_path) == 0:
+#                 print(f"No images found for {category}. Skipping...")
+#                 continue
+
+#             np.random.shuffle(imgs_path)
+#             split_pos = int(train_val_split * len(imgs_path))
+
+#             imgs_path_train = imgs_path[:split_pos]
+#             imgs_path_val = imgs_path[split_pos:]
+
+#             for img_path in imgs_path_train:
+#                 print(f"Saving train image: {img_path}")
+#                 save_image(img_path, data_dir, category, cat_it, dataset_name, train_iteration_no, 'train', resolution)
+#                 train_iteration_no += 1
+
+#             for img_path in imgs_path_val:
+#                 print(f"Saving val image: {img_path}")
+#                 save_image(img_path, data_dir, category, cat_it, dataset_name, val_iteration_no, 'val', resolution)
+#                 val_iteration_no += 1
+
+#     print(f"Dataset saved in {data_dir}")
+
 def save_data(root_path, dataset_dir, dataset_exp_name, images_folder_name, datasets, C, C_dash, train_val_split, resolution):
-    data_dir = os.path.join(root_path, dataset_dir, dataset_exp_name, images_folder_name)
+    data_dir = os.path.join(root_path, dataset_exp_name, images_folder_name)
     os.makedirs(data_dir, exist_ok=True)
     os.makedirs(os.path.join(data_dir, 'train'), exist_ok=True)
     os.makedirs(os.path.join(data_dir, 'val'), exist_ok=True)
@@ -37,7 +75,6 @@ def save_data(root_path, dataset_dir, dataset_exp_name, images_folder_name, data
 
     for cat_it, category in tqdm(enumerate(categories), total=len(categories)):
         for dataset_name in datasets:
-            # Corrected glob path
             imgs_path = np.array(glob.glob(os.path.join(root_path, dataset_dir, dataset_name, category, '*.*')))
             print(f"Searching in: {os.path.join(root_path, dataset_dir, dataset_name, category)}")
             print(f"Found {len(imgs_path)} images for category '{category}' in dataset '{dataset_name}'")
