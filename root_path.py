@@ -1,0 +1,1 @@
+server_root_path = '/Users/jawadsaeed/Documents/Fall 2024-2025/Advanced Topics in Machine Learning/Adaptive-Entropy-Based-Source-Free-Unsupervised-Domain-Adaptation-'
