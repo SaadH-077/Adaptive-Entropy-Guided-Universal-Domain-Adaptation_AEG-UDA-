@@ -24,8 +24,8 @@ for dataset_exp_name, datasets_source, datasets_target in tqdm(list(zip(dataset_
     source_train_val_split = 0.8
     target_train_val_split = 0.8
 
-    exp_dir = os.path.join(local_root_path, dataset_dir, dataset_exp_name)
-    os.makedirs(exp_dir, exist_ok=True)
+    # exp_dir = os.path.join(local_root_path, dataset_dir, dataset_exp_name)
+    # os.makedirs(exp_dir, exist_ok=True)
 
     print(f"Shared classes: {C}")
     print(f"Source-private classes: {Cs_dash}")

@@ -5,6 +5,17 @@ from tqdm import tqdm
 from skimage import io
 import numpy as np
 
+def save_augmented_image(original_path, prefix, augmented_img):
+    folder, filename = os.path.split(original_path)
+    new_filename = f"{prefix}_{filename}"
+    save_path = os.path.join(folder, new_filename)
+
+    if augmented_img.dtype != np.uint8:
+        augmented_img = np.clip(augmented_img, 0, 255).astype(np.uint8)
+
+    # print(f"Saving image to: {save_path}")  # Debug line
+    io.imsave(save_path, augmented_img)
+
 def augment_images(images_path):
     print('\nAugmenting Images...')
     for img_path in tqdm(images_path):
@@ -29,12 +40,6 @@ def augment_images(images_path):
         for idx in range(3):
             jittered_img = color_jitter(image, brightness=0.3, contrast=0.3, saturation=0.3, hue=0.05)
             save_augmented_image(img_path, f'jitter{idx}', jittered_img)
-
-def save_augmented_image(original_path, prefix, augmented_img):
-    folder, filename = os.path.split(original_path)
-    new_filename = f"{prefix}_{filename}"
-    save_path = os.path.join(folder, new_filename)
-    io.imsave(save_path, augmented_img)
 
 # Path to source and target images
 source_images_path = glob.glob('usfda_office_31_DtoA/source_images/train/*.png')
