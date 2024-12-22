@@ -3,3 +3,5 @@
 /__pycache__
 /negative_images
 /negative_masks
+/data
+/logs

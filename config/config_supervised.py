@@ -45,9 +45,9 @@ settings['num_negative_images'] = settings['batch_size']
 settings['cnn_to_use'] = 'resnet50'
 settings['Fs_dims'] = 256
 settings['softmax_temperature'] = 1
-settings['online_augmentation_90_degrees'] = True # Used for online rotations in the data loader
-settings['val_aug_imgs_mean_before_softmax'] = False
-settings['val_aug_imgs_mean_after_softmax'] = True
+# settings['online_augmentation_90_degrees'] = True # Used for online rotations in the data loader
+# settings['val_aug_imgs_mean_before_softmax'] = False
+# settings['val_aug_imgs_mean_after_softmax'] = True
 
 # Loading weights and experiment name. Change the experiment name here, to save the weights with the 
 # corresponding exp_name. The weights of this can then be loaded into another experiment, by setting
@@ -93,7 +93,8 @@ if settings['load_weights']:
 	best_weights = natsorted(glob(os.path.join(settings['weights_path'], settings['load_exp_name'], '*.pth')))[-1]
 	settings['load_weights_path'] = best_weights
 
-settings['dataset_exp_name'] = 'office_31_dataset/usfda_office_31_DtoA'
+# settings['dataset_exp_name'] = 'office_31_dataset/usfda_office_31_DtoA'
+settings['dataset_exp_name'] = 'usfda_office_31_DtoA'
 settings['dataset_path'] = os.path.join(server_root_path, 'data', settings['dataset_exp_name'], 'index_lists') 
-settings['negative_data_path'] = os.path.join(server_root_path, 'data', settings['dataset_exp_name'], 'negative_images') 
-settings['negative_mask_path'] = os.path.join(server_root_path, 'data', settings['dataset_exp_name'], 'negative_masks')
+settings['negative_data_path'] = os.path.join(server_root_path, 'negative_images') 
+settings['negative_mask_path'] = os.path.join(server_root_path, 'negative_masks')
