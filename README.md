@@ -4,6 +4,8 @@
 
 Adaptive Entropy-Guided Universal Domain Adaptation (AEG-UDA) introduces a novel approach to address universal domain adaptation challenges, focusing on four specific scenarios:
 
+![Alt text]("Implementation Diagrams/Full Pipeline.jpeg" "Optional Title")
+
 1. **Open-Set Domain Adaptation (ODA)**  
 2. **Open Partial Domain Adaptation (OPDA)**  
 3. **Closed Domain Adaptation (CDA)**  
@@ -36,6 +38,42 @@ These models serve as benchmarks for evaluating AEG-UDA in diverse adaptation sc
 ## Dataset Preparation
 
 To begin, download the **Office-31 dataset**, which is required for all experiments. The dataset can be obtained from the following link:  
-[Office-31 Dataset](https://people.eecs.berkeley.edu/~jhoffman/domainadapt/).
+[Office-31 Dataset](https://github.com/jindongwang/transferlearning/blob/master/data/dataset.md).
 
 Prepare the dataset in the following directory structure:
+
+data/
+├── amazon/Images/
+├── dslr/Images
+├── webcam/Images
+
+---
+
+Once downloaded:
+1. Place the zipped dataset in your Google Drive.  
+2. Ensure it is accessible during training by mounting your Google Drive in Colab.
+
+---
+
+## How to Run
+
+1. Open the corresponding file in **Google Colab**. This can be:
+   - DANCE emulated script.
+   - AEG-UDA script.
+
+2. Mount your Google Drive to access the dataset:
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
+
+3. Connect to a GPU and Run the Cells Sequentially
+
+--
+
+### 
+1. ODA : !sh script/run_office_obda.sh 0 /content/DANCE/configs/office-train-config_ODA.yaml
+2. OPDA : !sh script/run_office_opda.sh 0 /content/DANCE/configs/office-train-config_OPDA.yaml
+3. CDA : !sh script/run_office_cls.sh 0 /content/DANCE/configs/office-train-config_CDA.yaml
+4. PDA : !sh script/run_office_cls.sh 0 /content/DANCE/configs/office-train-config_PDA.yaml
+
+
