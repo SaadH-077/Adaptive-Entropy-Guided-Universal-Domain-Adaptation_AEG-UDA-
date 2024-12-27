@@ -4,19 +4,27 @@
 
 Adaptive Entropy-Guided Universal Domain Adaptation (AEG-UDA) introduces a novel approach to address universal domain adaptation challenges, focusing on four specific scenarios:
 
-![Implementation Diagram](Full_Pipeline.jpeg "Architectural Pipeline")
+![Implementation Diagram](Implementation%20Diagrams/Full%20Pipeline.jpeg "Architectural Pipeline")
 
 1. **Open-Set Domain Adaptation (ODA)**  
 2. **Open Partial Domain Adaptation (OPDA)**  
 3. **Closed Domain Adaptation (CDA)**  
-4. **Partial Domain Adaptation (PDA)**  
+4. **Partial Domain Adaptation (PDA)**
+
+![Implementation Diagram](Implementation%20Diagrams/UDA-Types.jpeg "Universal Domain Adaptation Scenarios")
 
 This framework is designed to compare our model, AEG-UDA, with other state-of-the-art models using:
-- A unique **Dynamic Adaptive Threshold**.
-- An **Entropy-Guided Refinement Pseudo-Labeling Strategy**.
-- A novel **Dynamic Rejection Loss** to handle domain overlaps and unknown classes effectively.
+1. A unique **Dynamic Adaptive Threshold**.
 
-AEG-UDA is tested against leading benchmarks in domain adaptation, leveraging its robust mechanisms to balance performance across diverse tasks.
+![Implementation Diagram](Implementation%20Diagrams/Dynamic%20Thresholding.jpeg "Dynamic Thresholding")
+
+2. An **Entropy-Guided Refinement Pseudo-Labeling Strategy**.
+
+![EGR Pseudo-Labeling](Implementation%20Diagrams/EGR%20Pseudo-Labelling.jpeg "EGR Pseudo-Labelling")
+  
+3. A novel **Dynamic Rejection Loss** to handle domain overlaps and unknown classes effectively.
+
+- AEG-UDA is tested against leading benchmarks in domain adaptation, leveraging its robust mechanisms to balance performance across diverse tasks.
 
 ---
 
