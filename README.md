@@ -4,7 +4,7 @@
 
 Adaptive Entropy-Guided Universal Domain Adaptation (AEG-UDA) introduces a novel approach to address universal domain adaptation challenges, focusing on four specific scenarios:
 
-![Alt text](Implementation Diagrams/Full Pipeline.jpeg "Optional Title")
+![Implementation Diagram](Full_Pipeline.jpeg "Architectural Pipeline")
 
 1. **Open-Set Domain Adaptation (ODA)**  
 2. **Open Partial Domain Adaptation (OPDA)**  
