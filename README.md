@@ -3,7 +3,7 @@
 A comprehensive course project on **Universal Domain Adaptation (UDA)** that proposes a new framework — **AEG-UDA** — to enhance the adaptability and robustness of models in non-overlapping and partially overlapping label spaces. This method integrates dynamic thresholding, entropy-guided pseudo-labeling, and a novel dynamic rejection loss to outperform existing approaches like DANCE across multiple adaptation scenarios.
 
 > 🧠 **Course**: Advanced Topics in Machine Learning (ATML - CS)  
-> 📅 **Semester**: Spring 2025  
+> 📅 **Semester**: Fall 2024
 > 🎓 **Institution**: LUMS  
 > 👨‍💻 Contributors: Muhammad Saad Haroon, Jawad Saeed, Daanish Uddin Khan
 
